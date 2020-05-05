@@ -125,10 +125,10 @@ function search(type, value) {
   let kmlurl = '';
   let uid = '&uid=0x3cfb19ead752b37bb90da0eb3a0fe78baa9fa055';
   if (type == 'postcode') {
-    tsvurl = 'http://www.nomisweb.co.uk/api/v01/dataset/NM_145_1.data.tsv?date=latest&geography=POSTCODE|' + value + ';299&rural_urban=0&cell=1...16&measures=20301&select=date_name,geography_code,cell_name,obs_value' + uid;
+    tsvurl = 'https://www.nomisweb.co.uk/api/v01/dataset/NM_145_1.data.tsv?date=latest&geography=POSTCODE|' + value + ';299&rural_urban=0&cell=1...16&measures=20301&select=date_name,geography_code,cell_name,obs_value' + uid;
     kmlurl = 'https://www.nomisweb.co.uk/api/v01/dataset/NM_145_1.data.kml?date=latest&geography=POSTCODE|' + value + ';299&rural_urban=0&cell=0&measures=20100' + uid;
   } else {
-    tsvurl = 'http://www.nomisweb.co.uk/api/v01/dataset/NM_145_1.data.tsv?date=latest&geography=LATLONG|' + value.lat + ';' + value.lng + ';299&rural_urban=0&cell=1...16&measures=20301&select=date_name,geography_code,cell_name,obs_value' + uid;
+    tsvurl = 'https://www.nomisweb.co.uk/api/v01/dataset/NM_145_1.data.tsv?date=latest&geography=LATLONG|' + value.lat + ';' + value.lng + ';299&rural_urban=0&cell=1...16&measures=20301&select=date_name,geography_code,cell_name,obs_value' + uid;
     kmlurl = 'https://www.nomisweb.co.uk/api/v01/dataset/NM_145_1.data.kml?date=latest&geography=LATLONG|' + value.lat + ';' + value.lng + ';299&rural_urban=0&cell=0&measures=20100' + uid;
   }
   fetch(tsvurl).then((response) => {
